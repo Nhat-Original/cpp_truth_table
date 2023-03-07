@@ -12,6 +12,10 @@ This simple c++ console program prints out a truth table based on the input bool
 
 # Usage
 
+you can customize some feature in the customization.cpp file.
+
 # Contact
 
 Hoang Minh Nhat - nhatoriginal@gmail.com
+
+# Acknowledgements
