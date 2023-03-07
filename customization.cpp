@@ -1,3 +1,13 @@
+#ifndef headers // #include guards
+#define headers
+
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+
+#endif // headers
+
 /**
  * custom variables
  */

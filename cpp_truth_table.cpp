@@ -14,31 +14,17 @@
 bool out = 0;
 
 /**
- * function declarations
- */
-std::string input();
-std::string removeSpace(std::string str);
-void process(std::string str);
-void output();
-
-/**
- * start
- */
-int main()
-{
-  do
-  {
-    std::string inp = input();
-    process(inp);
-    output();
-  } while (!out);
-
-  return 0;
-}
-
-/**
  * helper functions
  */
+void printArr(std::vector<char> arr)
+{
+  for (int i = 0; i < arr.size(); ++i)
+  {
+    std::cout << arr[i] << " ";
+  }
+  std::cout << std::endl;
+}
+
 void bubbleSort(std::vector<char> &arr)
 {
   for (int i = 0; i < arr.size(); ++i)
@@ -49,6 +35,38 @@ void bubbleSort(std::vector<char> &arr)
         std::swap(arr[j], arr[j + 1]);
     }
   }
+}
+
+void addToVariablesArr(std::vector<char> &arr, std::vector<char> copy)
+{
+  for (int i = 0; i < copy.size(); ++i)
+  {
+    if (arr.empty() || arr[arr.size() - 1] != copy[i])
+    {
+      arr.push_back(copy[i]);
+    }
+  }
+}
+
+void modifyVariablesArr(std::vector<char> &variablesArr, std::string str)
+{
+  std::vector<char> copy;
+
+  for (int i = 0; i < str.length(); ++i)
+  {
+    if (str[i] >= 'a' && str[i] <= 'z')
+    {
+      copy.push_back(str[i]);
+    }
+  }
+
+  bubbleSort(copy);
+
+  addToVariablesArr(variablesArr, copy);
+}
+
+void addInitialVarsCols(std::vector<std::vector<int>> &table, int &col, std::vector<char> variablesArr)
+{
 }
 
 /**
@@ -71,37 +89,43 @@ std::string input()
   std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c)
                  { return std::tolower(c); });
 
-  // std::cout << str << std::endl;
-  // std::cout << str.length() << std::endl;
-
   return str;
-}
-
-void process(std::string str)
-{
-  std::vector<char> vars;
-
-  for (int i = 0; i < str.length(); ++i)
-  {
-    if (str[i] >= 'a' && str[i] <= 'z')
-    {
-      vars.push_back(str[i]);
-    }
-  }
-
-  bubbleSort(vars);
-
-  // for (int i = 0; i < str.length(); ++i)
-  // {
-  //   std::cout << vars[i] << " ";
-  // }
-
-  if (out)
-    return;
 }
 
 void output()
 {
   if (out)
     return;
+}
+
+void process(std::string str)
+{
+  if (out)
+    return;
+
+  int col = 0;
+  std::vector<std::vector<int>> table;
+
+  std::vector<char> variablesArr;
+  modifyVariablesArr(variablesArr, str);
+
+  addInitialVarsCols(table, col, variablesArr);
+
+  output();
+}
+
+/**
+ * start
+ */
+int main()
+{
+  do
+  {
+
+    std::string inp = input();
+    process(inp);
+
+  } while (!out);
+
+  return 0;
 }
