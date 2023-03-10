@@ -1,23 +1,23 @@
 # cpp_truth_table
 
-# Description
+## Description
 
 This simple c++ console program prints out a truth table based on the input boolean expression.
 
-# Instructions
+## Instructions
 
-1. Fork this repository.
-2. Clone your forked repository.
-3. Run the app.exe file.
+- [ ] Fork this repository.
+- [ ] Clone your forked repository.
+- [ ] Run the app.exe file.
 
-# Usage
+## Usage
 
 You can customize some feature in the customization.cpp file.
 
 Making the project was so challenging that I decided to abandon it. What it only does is printing out the initial truth table of the input variables, it is unable to handle any logic.
 
-If you still want to run the program here is an example in the terminal:
-''
+**If you still want to run the program here is an example in the terminal:**
+```
 $ ./app.exe
 Enter str or enter '?' to escape: a & b | -c
 =====================================
@@ -29,10 +29,9 @@ Enter str or enter '?' to escape: a & b | -c
 =====================================
 Enter str or enter '?' to escape: ?
 $
-''
-
+```
 Even it fails, I have learnt that you should plan your project carefully and seperate your source code into different files.
 
-# Contact
+## Contact
 
-Hoang Minh Nhat - nhatoriginal@gmail.com
+Hoang Minh Nhat - [nhatoriginal@gmail.com.](mailto:nhatoriginal@gmail.com)
